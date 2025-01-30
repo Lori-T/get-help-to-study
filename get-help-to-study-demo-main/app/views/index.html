@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName=serviceName %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">
+      Template for accessibility testing home
+
+    </h1>
+
+
+<p class="govuk-body">Two different ways of exploring an accessible service: from a good (accessible) boilerplate, or a deliberately bad version.</p>
+
+<div class="govuk-button-group">
+
+{{ govukButton({
+  text: "Good version",
+  href: "/good/index"
+}) }}
+
+
+{{ govukButton({
+  text: "Bad version",
+  href: "/bad/index",
+  classes: "govuk-button--warning"
+
+}) }}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+
+{{ govukFooter({
+  meta: {
+    items: [
+    {
+      href: "/",
+      text: "Prototype home"
+    },
+      {
+        href: "/manage-prototype",
+        text: "Manage prototype"
+      },
+      {
+        href: "/manage-prototype/clear-data",
+        text: "Clear data"
+      },
+      {
+        href: "https://github.com/vickytnz/demo-kit/",
+        text: "Source code on Github (opens in new tab)",
+        attributes: {
+          "target" : "_blank"
+        }
+      }
+    ]
+  }
+}) }}
+
+{% endblock %}
